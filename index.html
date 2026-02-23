@@ -10,25 +10,25 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="mx-[200px] my-[60px]">
+<body class="lg:mx-[200px] lg:my-[60px] mx-[20px] my-[20px]">
 
     <header>
 
         <section class="mb-5">
             <h1 class="font-bold text-3xl text-[#002C5C]">Job Application Tracker</h1>
         </section>
-        <section class="flex justify-between ">
+        <section class="flex flex-col md:flex-row lg:flex-row justify-between  ">
             <div class="shadow-sm px-25 py-5">
-                <p>Total</p>
-                <p class="font-bold">0</p>
+                <p >Total</p>
+                <p id="total-count" class="font-bold">0</p>
             </div>
             <div class="shadow-sm px-25 py-5">
                 <p>Interview</p>
-                <p class="text-[#10B981] font-bold">0</p>
+                <p id="interview-count" class="text-[#10B981] font-bold">0</p>
             </div>
             <div class="shadow-sm px-25 py-5">
                 <p>Rejected</p>
-                <p class="text-[#EF4444] font-bold">0</p>
+                <p id="rejected-count" class="text-[#EF4444] font-bold">0</p>
             </div>
         </section>
     </header>
@@ -37,185 +37,208 @@
         <h1 class="text-[#002C5C] font-bold text-2xl pb-3">Available Jobs</h1>
 
         <div>
-            <button class="px-8 py-3 shadow-sm">All</button>
-            <button class="px-8 py-3 shadow-sm">Interview</button>
-            <button class="px-8 py-3 shadow-sm">Rejected</button>
+            <button id="all-filter-btn" class="px-8 py-3 shadow-sm bg-[#3B82F6]  rounded-sm text-white">All</button>
+            <button id="interview-filter-btn" class="px-8 py-3 shadow-sm rounded-sm ">Interview</button>
+            <button id="rejected-filter-btn" class="px-8 py-3 shadow-sm rounded-sm">Rejected</button>
         </div>
     </section>
 
     <section>
-        <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-1 gap-6">
+        <div id="card-root" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
 
             <!-- Card 1 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-1" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-1')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
-                <p class="text-gray-500 text-sm mt-1">React Native Developer</p>
-                <p class="text-gray-500 text-sm mt-2">Remote • Full-time • $130k-$175k</p>
-                <div class="mt-4"><span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-md">NOT
+                
+                <p id="work" class="text-gray-500 text-sm mt-1">React Native Developer</p>
+                <p id="type" class="text-gray-500 text-sm mt-2">Remote • Full-time • $130k-$175k</p>
+                <p id="location" class="text-gray-500 text-sm mt-2">Location : dhaka</p>
+                <div class="mt-4"><span id="status" class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-md">NOT
                         APPLIED</span></div>
-                <p class="text-gray-600 text-sm mt-4">Build cross-platform mobile apps.</p>
+                <p id="description" class="text-gray-600 text-sm mt-4">Build cross-platform mobile apps.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
+            
 
             <!-- Card 2 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-2" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-2')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">Frontend Developer</p>
                 <p class="text-gray-500 text-sm mt-2">Onsite • Full-time • $90k-$120k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : chittagong</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Create modern UI systems.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-3" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-3')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">Backend Engineer</p>
                 <p class="text-gray-500 text-sm mt-2">Remote • Contract • $110k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : Sylet</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Develop scalable APIs.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
             <!-- Card 4 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-4" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-4')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">UI Designer</p>
                 <p class="text-gray-500 text-sm mt-2">Hybrid • Full-time • $80k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : Barisal</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Design clean interfaces.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button  id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
             <!-- Card 5 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-5" class=" card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-5')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">Data Analyst</p>
                 <p class="text-gray-500 text-sm mt-2">Remote • Part-time • $70k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : Uttara</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Analyze business data trends.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
             <!-- Card 6 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-6" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-6')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">Cyber Security Specialist</p>
                 <p class="text-gray-500 text-sm mt-2">Onsite • Full-time • $140k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : Mirpur Dosh</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Protect systems from threats.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="delete-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
             <!-- Card 7 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-7" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-7')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">Flutter Developer</p>
                 <p class="text-gray-500 text-sm mt-2">Remote • Full-time • $115k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : Bangladesh</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Build mobile apps with Flutter.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
             <!-- Card 8 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-8" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-8')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">ML Engineer</p>
                 <p class="text-gray-500 text-sm mt-2">Hybrid • Full-time • $160k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : Mohakhali</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Train machine learning models.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
             <!-- Card 9 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-9" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-9')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">QA Engineer</p>
                 <p class="text-gray-500 text-sm mt-2">Onsite • Contract • $85k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : Cumila</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Test software quality.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
             <!-- Card 10 -->
-            <div class="bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
+            <div id="card-10" class="card bg-gray-100 rounded-xl shadow-md p-6 border border-gray-200">
                 <div class="flex justify-between">
                     <h2 class="text-lg font-semibold text-gray-800">Mobile First Corp</h2>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    <button  onclick="deleted('card-10')" id="delete-btn" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <p class="text-gray-500 text-sm mt-1">Full Stack Developer</p>
                 <p class="text-gray-500 text-sm mt-2">Remote • Full-time • $150k</p>
+                <p class="text-gray-500 text-sm mt-2">Location : Bangladesh</p>
                 <div class="mt-4"><span class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p class="text-gray-600 text-sm mt-4">Develop scalable web apps.</p>
                 <div class="flex gap-3 mt-5">
-                    <button
+                    <button id="interview-btn"
                         class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
+
+            
+
+        </div>
+    </section>
+
+    <section>
+        <div id="interview-section"></div>
+    </section>
+    <section>
+        <div id="rejected-section">
 
         </div>
     </section>
