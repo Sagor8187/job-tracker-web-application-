@@ -37,9 +37,18 @@
         <h1 class="text-[#002C5C] font-bold text-2xl pb-3">Available Jobs</h1>
 
         <div>
-            <button onclick="toggolestyle('all-filter-btn')" id="all-filter-btn" class="px-8 py-3 shadow-sm bg-[#3B82F6]  rounded-sm text-white">All</button>
-            <button onclick="toggolestyle('interview-filter-btn')" id="interview-filter-btn" class="px-8 py-3 shadow-sm rounded-sm ">Interview</button>
-            <button onclick="toggolestyle('rejected-filter-btn')" id="rejected-filter-btn" class="px-8 py-3 shadow-sm rounded-sm">Rejected</button>
+            <button onclick="toggolestyle('all-filter-btn')" id="all-filter-btn" class="m-1 px-8 py-3 shadow-sm bg-[#3B82F6]  rounded-sm text-white">All</button>
+            <button onclick="toggolestyle('interview-filter-btn')" id="interview-filter-btn" class=" m-1 px-8 py-3 shadow-sm rounded-sm ">Interview</button>
+            <button onclick="toggolestyle('rejected-filter-btn')" id="rejected-filter-btn" class="m-1 px-8 py-3 shadow-sm rounded-sm">Rejected</button>
+        </div>
+    </section>
+
+        <section  class="">
+        <div id="interview-section" class=" hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6"></div>
+    </section>
+    <section>
+        <div id="rejected-section"class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 hidden">
+
         </div>
     </section>
 
@@ -60,9 +69,9 @@
                         APPLIED</span></div>
                 <p id="description" class="text-gray-600 text-sm mt-4">Build cross-platform mobile apps.</p>
                 <div class="flex gap-3 mt-5">
-                    <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button 
+                        class=" interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button  class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
             
@@ -79,9 +88,9 @@
                 <div  class="mt-4"><span id="status" class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p id="description" class="text-gray-600 text-sm mt-4">Create modern UI systems.</p>
                 <div class="flex gap-3 mt-5">
-                    <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button 
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button  class=" rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -97,9 +106,9 @@
                 <div   class="mt-4"><span id="status" class="bg-gray-200 text-xs px-3 py-1 rounded-md">NOT APPLIED</span></div>
                 <p  id="description"   class="text-gray-600 text-sm mt-4">Develop scalable APIs.</p>
                 <div class="flex gap-3 mt-5">
-                    <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                    <button 
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button  class=" rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -116,8 +125,8 @@
                 <p  id="description"   class="text-gray-600 text-sm mt-4">Design clean interfaces.</p>
                 <div class="flex gap-3 mt-5">
                     <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button  id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button  id="rejected-btn" class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -134,8 +143,8 @@
                 <p  id="description"   class="text-gray-600 text-sm mt-4">Analyze business data trends.</p>
                 <div   class="flex gap-3 mt-5">
                     <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -152,8 +161,8 @@
                 <p  id="description"   class="text-gray-600 text-sm mt-4">Protect systems from threats.</p>
                 <div class="flex gap-3 mt-5">
                     <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -170,8 +179,8 @@
                 <p  id="description"   class="text-gray-600 text-sm mt-4">Build mobile apps with Flutter.</p>
                 <div class="flex gap-3 mt-5">
                     <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -188,8 +197,8 @@
                 <p  id="description"   class="text-gray-600 text-sm mt-4">Train machine learning models.</p>
                 <div class="flex gap-3 mt-5">
                     <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -206,8 +215,8 @@
                 <p  id="description"   class="text-gray-600 text-sm mt-4">Test software quality.</p>
                 <div class="flex gap-3 mt-5">
                     <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -224,8 +233,8 @@
                 <p  id="description"   class="text-gray-600 text-sm mt-4">Develop scalable web apps.</p>
                 <div class="flex gap-3 mt-5">
                     <button id="interview-btn"
-                        class="border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
-                    <button id="rejected-btn" class="border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
+                        class="interview-btn border border-green-500 text-green-600 px-4 py-1.5 rounded-md text-sm">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm">Rejected</button>
                 </div>
             </div>
 
@@ -234,14 +243,7 @@
         </div>
     </section>
 
-    <section>
-        <div id="interview-section"></div>
-    </section>
-    <section>
-        <div id="rejected-section">
 
-        </div>
-    </section>
 
     <script src="./script.js"></script>
 </body>
