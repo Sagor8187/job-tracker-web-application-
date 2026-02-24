@@ -135,9 +135,26 @@ function renderLists() {
 
 function renderSpecificList(dataArray, container, type) {
     container.innerHTML = "";
+
+    // Check if there are no jobs in this category
+    if (dataArray.length === 0) {
+        container.classList.remove('grid-cols-1', 'md:grid-cols-2'); 
+        container.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-12 w-full text-center bg-gray-50 rounded-xl border-2 border border-gray-200">
+                <i class="fa-solid fa-folder-open text-5xl text-gray-300 mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-700">No jobs available</h3>
+                <p class="text-gray-500">Check back soon for new job opportunities</p>
+            </div>
+        `;
+        return;
+    }
+
+    // add grid layout if it was removed for the empty state
+    container.classList.add('grid-cols-1');
+    if (window.innerWidth >= 768) container.classList.add('md:grid-cols-2');
+
     dataArray.forEach((job, index) => {
         const div = document.createElement("div");
-        // uniqe id genarate korci jate delete thik moto kaj kore
         const uniqueId = `${type.toLowerCase()}-${index}`;
         div.id = uniqueId;
         div.className = "card bg-white rounded-xl shadow-md p-6 border border-gray-200";
@@ -165,7 +182,6 @@ function renderSpecificList(dataArray, container, type) {
                     ${isCurrentlyInterviewed ? 'disabled' : ''}>
                     Interview
                 </button>
-                
                 <button class="rejected-btn border border-red-500 text-red-600 px-4 py-1.5 rounded-md text-sm ${!isCurrentlyInterviewed ? 'opacity-50 cursor-not-allowed' : 'hover:bg-red-50'}" 
                     ${!isCurrentlyInterviewed ? 'disabled' : ''}>
                     Rejected
@@ -175,7 +191,6 @@ function renderSpecificList(dataArray, container, type) {
         container.appendChild(div);
     });
 }
-
 
 calculatcount();
 
