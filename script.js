@@ -20,27 +20,7 @@ function calculatcount() {
     rejectedCountDisplay.innerText = rejected.length;
 }
 
-// filter toogle btn section hide show handle
-// function toggolestyle(id) {
-//     [allFilterBtn, interviewFilterBtn, rejectedFilterBtn].forEach(btn => {
-//         btn.classList.remove("bg-[#3B82F6]", "text-white");
-//         btn.classList.add("bg-white", "text-black");
-//     });
 
-//     document.getElementById(id).classList.add("bg-[#3B82F6]", "text-white");
-
-//     mainContainer.parentElement.classList.add('hidden');
-//     interviewContainer.classList.add('hidden');
-//     rejectedContainer.classList.add('hidden');
-
-//     if (id === 'all-filter-btn') {
-//         mainContainer.parentElement.classList.remove('hidden');
-//     } else if (id === 'interview-filter-btn') {
-//         interviewContainer.classList.remove('hidden');
-//     } else if (id === 'rejected-filter-btn') {
-//         rejectedContainer.classList.remove('hidden');
-//     }
-// }
 
 //delte function 
 function deleted(cardId, title) {
