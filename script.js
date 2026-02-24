@@ -140,7 +140,7 @@ function renderSpecificList(dataArray, container, type) {
     if (dataArray.length === 0) {
         container.classList.remove('grid-cols-1', 'md:grid-cols-2'); 
         container.innerHTML = `
-            <div class="flex flex-col items-center justify-center py-12 w-full text-center bg-gray-50 rounded-xl border-2 border border-gray-200">
+            <div class="flex flex-col items-center justify-center py-12 w-full text-center bg-gray-50 rounded-xl border-2  border-gray-200">
                 <i class="fa-solid fa-folder-open text-5xl text-gray-300 mb-4"></i>
                 <h3 class="text-xl font-semibold text-gray-700">No jobs available</h3>
                 <p class="text-gray-500">Check back soon for new job opportunities</p>
