@@ -193,5 +193,6 @@ function renderSpecificList(dataArray, container, type) {
 }
 
 calculatcount();
+renderLists()
 
 
