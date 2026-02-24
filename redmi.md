@@ -29,7 +29,7 @@ Event Delegation is a technique where you attach a single event listener to a pa
 
 Why useful?: It saves memory and works automatically for newly added elements (dynamic content) without needing to re-bind listeners.
 
-5. 5. What is the difference between preventDefault() and stopPropagation() methods?
+5. What is the difference between preventDefault() and stopPropagation() methods?
 
 answer:
 
